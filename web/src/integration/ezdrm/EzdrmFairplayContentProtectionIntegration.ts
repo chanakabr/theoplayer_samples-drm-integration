@@ -20,6 +20,8 @@ export class EzdrmFairplayContentProtectionIntegration implements ContentProtect
     }
 
     onCertificateRequest(request: CertificateRequest): MaybeAsync<Partial<CertificateRequest> | BufferSource> {
+        console.log('ABC');
+        
         request.url = this.contentProtectionConfiguration.fairplay?.certificateURL ??
             EzdrmFairplayContentProtectionIntegration.DEFAULT_CERTIFICATE_URL;
         request.headers = {
